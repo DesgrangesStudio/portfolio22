@@ -1,5 +1,307 @@
 ---
 ---
+@import url("https://use.typekit.net/eok8vra.css");
+
+$background: #F5F5F2;
+$black: #000000;
+$grey: #808080;
+$typography: neue-haas-grotesk-text;
+$border: 1px solid rgba($color: #000000, $alpha: 0.15);
+$gutter: 1.5rem;
+
+
+html, body {
+    background-color: $background;
+    color: $black;
+    font-family: $typography;
+    font-size: 16px;
+}
+
 body {
-    background-color: yellow;
+    padding: 1.5rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: $typography;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    line-height: 0.95;
+}
+
+span {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: -0.15rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.12rem;
+}
+
+h3 {
+    font-size: 2rem;
+    letter-spacing: -0.10rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.06rem;
+}
+
+p {
+    font-family: $typography;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    font-family: $typography;
+    font-size: 0.75rem;
+    color: $black;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: -0.02rem;
+}
+
+a.button {
+    background-color: $black;
+    border: 2px solid $black;
+    padding: 1.5rem 3.5rem;
+    color: $background;
+    transition: all 0.2s ease-out;
+}
+
+a.button:hover {
+    background-color: rgba($background, $alpha: 1);
+    border: 2px solid $black;
+    color: $black;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section {
+    margin-top: 1.5rem;
+    border-top: $border;
+    width: 100%;
+    display: flex;
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+}
+
+section.intro {
+    border-top: 0;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;  
+    
+        div.text {
+            flex: 1;
+            margin-right: $gutter;
+
+                p {
+                    margin-bottom: 3rem;
+                }       
+        }
+
+        div.hero {
+            flex: 2;
+            width: 100%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+}
+
+section.about {
+
+    div.title {
+        flex: 1;
+        margin-right: $gutter;
+    }
+
+    div.content {
+        flex: 2;
+
+            p {
+                width: 50%;
+            }
+
+            h3 {
+                width: 50%;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+        
+    }
+}
+
+section.projects {
+    flex-direction: column;
+    text-align: center;
+
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    div.recent-projects {
+        display: flex;
+        margin-bottom: 4rem;
+
+        div{
+            flex:1;
+            margin-right: $gutter;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                text-align: left;
+            }
+
+            p.client {
+                text-transform: uppercase;
+                font-weight: 700;
+                margin: 0;
+            }
+
+            p.tag {
+                text-transform: uppercase;
+                margin-top: -0.4rem;
+            }
+        }
+
+        div:last-child {
+            margin-right: 0;
+        }
+    }
+
+    div.cta h2 {
+        margin-bottom: 3rem;
+    }
+}
+
+section.process {
+
+    div.title {
+        flex: 1;
+        margin-right: $gutter;
+    }
+
+    div.content {
+        flex: 2;
+
+        div.inner-container {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+
+            div.process-item {
+                display: flex; 
+                border-bottom: $border;
+                margin-top: 2rem;
+                padding-bottom: 3rem;
+
+                div.process-item-number {
+                    flex: 1;
+
+                    p {
+                        font-size: 8.5rem;
+                        font-weight: 700;
+                        line-height: 1;
+                        text-align: left;
+                        margin: 0;
+                    }
+                    
+                }
+
+                div.process-content {
+                    flex: 5;
+
+                    h4 {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
+
+                }
+            }
+
+            div.process-item:first-child {
+                margin-top: 0;
+            }
+
+            div.process-item:last-child {
+                border-bottom: 0;
+            }
+
+        }
+
+    }
+
+}
+
+footer {
+    padding-top: 6.5rem;
+    border-top: $border;
+    text-align: center;
+
+    div.cta {
+        width: 33%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+
+        p {
+            margin-bottom: 3rem;
+        }
+    }
+
+    div.contact {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
+
+        p {
+            margin: 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+
+    div.copyright {
+
+        p {
+            border-top: $border;
+            border-bottom: $border;
+            padding : 1rem 0 1rem 0;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            color: $grey;
+        }
+    }
+    
 }
