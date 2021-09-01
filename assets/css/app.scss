@@ -6,9 +6,13 @@ $background: #F5F5F2;
 $black: #000000;
 $grey: #808080;
 $typography: neue-haas-grotesk-text;
-$border: 1px solid rgba($color: #000000, $alpha: 0.15);
+$border: 1px solid rgba($color: #000000, $alpha: 0.05);
 $gutter: 1.5rem;
 
+$width-small: 400px;
+$width-medium: 800px;
+$width-large: 1100px;
+$width-xlarge: 1440px;    
 
 html, body {
     background-color: $background;
@@ -19,12 +23,16 @@ html, body {
 
 body {
     padding: 1.5rem;
+
+    @media screen and (max-width: $width-small) { 
+        padding: 1rem;
+    }
 }
 
 h1, h2, h3, h4 {
     font-family: $typography;
     font-weight: 300;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
     line-height: 0.95;
 }
@@ -35,23 +43,35 @@ span {
 
 h1 {
     font-size: 3rem;
-    letter-spacing: -0.15rem;
+    letter-spacing: -0.1rem;
+
+    @media screen and (max-width: $width-small) { 
+        font-size: 2.4rem;
+    }
 }
 
 h2 {
     font-size: 1.5rem;
-    letter-spacing: -0.12rem;
+    letter-spacing: -0.1rem;
+
+    @media screen and (max-width: $width-small) { 
+        font-size: 2rem;
+    }
 }
 
 h3 {
     font-size: 2rem;
-    letter-spacing: -0.10rem;
+    letter-spacing: -0.05rem;
+
+    @media screen and (max-width: $width-small) { 
+        font-size: 1.2rem;
+    }
 }
 
 h4 {
     font-size: 1rem;
     font-weight: 700;
-    letter-spacing: -0.06rem;
+    letter-spacing: -0.03rem;
 }
 
 p {
@@ -100,17 +120,29 @@ section {
     display: flex;
     padding-top: 3.5rem;
     padding-bottom: 5rem;
+
+    @media screen and (max-width: $width-small) { 
+        flex-direction: column-reverse;
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
+        padding: 1rem 0 1rem 0;
+    }
 }
 
 section.intro {
     border-top: 0;
+    padding-top: 0;
     height: 100vh;
     align-items: center;
-    overflow: hidden;  
+    overflow: hidden;
     
         div.text {
             flex: 1;
             margin-right: $gutter;
+
+            @media screen and (max-width: $width-small) { 
+                margin-right: 0;
+            }
 
                 p {
                     margin-bottom: 3rem;
@@ -121,18 +153,32 @@ section.intro {
             flex: 2;
             width: 100%;
 
+            @media screen and (max-width: $width-small) { 
+                max-height: 45vh;
+                overflow: hidden;
+            }
+
             img {
                 width: 100%;
                 object-fit: cover;
+                object-position: center center;
             }
         }
 }
 
 section.about {
 
+    @media screen and (max-width: $width-small) { 
+        flex-direction: column;
+    }
+
     div.title {
         flex: 1;
         margin-right: $gutter;
+
+        @media screen and (max-width: $width-small) { 
+            margin-right: 0;
+        }
     }
 
     div.content {
@@ -140,6 +186,10 @@ section.about {
 
             p {
                 width: 50%;
+
+                @media screen and (max-width: $width-small) { 
+                    width: 100%;
+                }
             }
 
             h3 {
@@ -148,6 +198,10 @@ section.about {
                 font-weight: 700;
                 margin-top: 3rem;
                 margin-bottom: 3rem;
+
+                @media screen and (max-width: $width-small) { 
+                    width: 100%;
+                }
             }
         
     }
@@ -167,14 +221,27 @@ section.projects {
         display: flex;
         margin-bottom: 4rem;
 
+        @media screen and (max-width: $width-small) { 
+            flex-direction: column;
+        }
+
         div{
             flex:1;
             margin-right: $gutter;
+
+            @media screen and (max-width: $width-small) { 
+                margin: 0;
+            }
 
             img {
                 width: 100%;
                 object-fit: cover;
                 margin-bottom: 1rem;
+
+                @media screen and (max-width: $width-small) { 
+                    margin-top: 2rem;
+                    margin-bottom: 0.5rem;
+                }
             }
 
             p {
@@ -205,6 +272,10 @@ section.projects {
 
 section.process {
 
+    @media screen and (max-width: $width-small) { 
+        flex-direction: column;
+    }
+
     div.title {
         flex: 1;
         margin-right: $gutter;
@@ -218,11 +289,20 @@ section.process {
             display: flex;
             flex-direction: column;
 
+            @media screen and (max-width: $width-small) { 
+                width: 100%;
+            }
+
             div.process-item {
-                display: flex; 
+                display: flex;
                 border-bottom: $border;
                 margin-top: 2rem;
                 padding-bottom: 3rem;
+
+                @media screen and (max-width: $width-small) { 
+                    flex-direction: column;
+                }
+            
 
                 div.process-item-number {
                     flex: 1;
@@ -275,6 +355,10 @@ footer {
         margin-right: auto;
         margin-bottom: 3rem;
 
+        @media screen and (max-width: $width-small) { 
+            width: 100%;
+        }
+
         p {
             margin-bottom: 3rem;
         }
@@ -322,11 +406,11 @@ section.project-hero {
     }
 
     div.hero-image {
-        width: 100%;
 
         img {
             width: 100%;
             object-fit: cover;
+            object-position: right bottom;
         }
     }
 }
